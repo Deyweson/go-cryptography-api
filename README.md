@@ -11,12 +11,12 @@ Esta é a solução para o desafio proposto em [Backend Brasil](https://github.c
 
 ## Tarefas
 
-- [ ] Aprender a criptografar com Go
-- [ ] Rota de Registro
-  - [ ] Criar rota
-  - [ ] Validar dados do corpo da requisição
-  - [ ] Criptografar dados
-  - [ ] Salvar no banco de dados
-- [ ] Rota para Visualizar os Dados
+- [X] Aprender a criptografar com Go
+- [X] Rota de Registro
+  - [X] Criar rota
+  - [X] Validar dados do corpo da requisição
+  - [X] Criptografar dados
+  - [X] Salvar no banco de dados
+- [X] Rota para Visualizar os Dados
 - [ ] Rota para Editar os Dados
 - [ ] Rota para Excluir Usuário
