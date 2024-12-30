@@ -1,13 +1,20 @@
 package models
 
-import "gorm.io/gorm"
+import (
+	"gopkg.in/validator.v2"
+	"gorm.io/gorm"
+)
 
 type User struct {
 	gorm.Model
-	UserDocument    string `json:"user_document" binding:"required"`
-	CreditCardToken string `json:"credit_card_token" binding:"required"`
-	Value           int    `json:"value" binding:"required"`
+	UserDocument    string `json:"user_document" validate:"min=3,max=25, regexp=^[0-9]*$"`
+	CreditCardToken string `json:"credit_card_token" validate:"nonzero, len=16, regexp=^[0-9]*$"`
+	Value           int    `json:"value" validate:"nonzero"`
 }
 
-//
-// min=10
+func ValidatorUserData(user *User) error {
+	if err := validator.Validate(user); err != nil {
+		return err
+	}
+	return nil
+}
